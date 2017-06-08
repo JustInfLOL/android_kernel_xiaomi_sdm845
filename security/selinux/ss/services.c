@@ -2074,9 +2074,11 @@ int security_load_policy(void *data, size_t len)
 
 	if (!ss_initialized) {
 		avtab_cache_init();
+		ebitmap_cache_init();
 		rc = policydb_read(&policydb, fp);
 		if (rc) {
 			avtab_cache_destroy();
+			ebitmap_cache_destroy();
 			goto out;
 		}
 
@@ -2087,6 +2089,7 @@ int security_load_policy(void *data, size_t len)
 		if (rc) {
 			policydb_destroy(&policydb);
 			avtab_cache_destroy();
+			ebitmap_cache_destroy();
 			goto out;
 		}
 
@@ -2094,6 +2097,7 @@ int security_load_policy(void *data, size_t len)
 		if (rc) {
 			policydb_destroy(&policydb);
 			avtab_cache_destroy();
+			ebitmap_cache_destroy();
 			goto out;
 		}
 
