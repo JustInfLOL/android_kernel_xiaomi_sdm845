@@ -10,10 +10,10 @@ autopack=1
 buildtype=clang
 timezone="Asia/Shanghai"
 build_device="polaris"
-kernel_name="Nightmare-kernel"
+kernel_name="Infzery-kernel"
 defconfig_path="polaris_defconfig"
 kbuild_build_user="Polaris"
-kbuild_build_host="Dedrimer"
+kbuild_build_host="Infzery"
 support="11"
 #====================
 
